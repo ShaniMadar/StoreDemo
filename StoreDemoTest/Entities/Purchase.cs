@@ -16,7 +16,7 @@ namespace StoreDemoTest.Entities
         public int Employee { get; set; }
         public int Status { get; set; }
         public decimal TotalSum { get; set; }
-        public decimal? PaidAmount { get; set; }
+        public decimal PaidAmount { get; set; }
 
         public Employees EmployeeNavigation { get; set; }
         public PurchaseStatusType StatusNavigation { get; set; }
