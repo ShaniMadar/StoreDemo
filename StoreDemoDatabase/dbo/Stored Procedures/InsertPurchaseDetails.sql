@@ -21,7 +21,7 @@ begin
 	set @inventoryQuantity = (select quantity from Inventory where Item = @item)
 
 	update Inventory 
-	set Quantity = (@inventoryQuantity - @quantity),
+	set Quantity = (case when (@quantity > @inventoryQuantity) then 0 else (@inventoryQuantity - @quantity) end),
 	LastUpdated = GETDATE(),
 	Employee = null
 	where Item = @item
